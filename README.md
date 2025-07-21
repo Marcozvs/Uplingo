@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://marcozvs.github.io/UplingoPublicPage/">
+  <a href="https://marcozvs.github.io/UplingoPublicPage/" target="_blank" rel="noopener noreferrer">
     <img src="./images/logo.png" alt="Uplingo Logo" width="200"/>
   </a>
 </p>
