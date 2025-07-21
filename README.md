@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="./images/logo.png" alt="Uplingo Logo" width="200"/>
+  <a href="https://marcozvs.github.io/UplingoPublicPage/">
+    <img src="./images/logo.png" alt="Uplingo Logo" width="200"/>
+  </a>
 </p>
 
 <p align="center">
