@@ -26,15 +26,16 @@
 ### Front-End:
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white">
-  <img src="https://img.shields.io/badge/NgRx-BA2BD2?logo=ngrx&logoColor=white">
-  <img src="https://img.shields.io/badge/RxJS-B7178C?logo=reactivex&logoColor=white">
-  <img src="https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=white">
-  <img src="https://img.shields.io/badge/Playwright-45ba4b?logo=microsoftedge&logoColor=white">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white">
-  <img src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white" alt="Angular Badge">
+  <img src="https://img.shields.io/badge/NgRx-BA2BD2?logo=ngrx&logoColor=white" alt="NgRx Badge">
+  <img src="https://img.shields.io/badge/RxJS-B7178C?logo=reactivex&logoColor=white" alt="RxJS Badge">
+  <img src="https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=white" alt="Jest Badge">
+  <img src="https://img.shields.io/badge/Playwright-45ba4b?logo=microsoftedge&logoColor=white" alt="Playwright Badge">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript Badge">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript Badge">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind CSS Badge">
+  <img src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white" alt="Sass Badge">
+  <img src="https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white" alt="HTML Badge">
 </p>
 
 ### Back-End:
@@ -64,9 +65,9 @@ The minimum machine configuration to run the application in containers depends d
 
 For this model, the recommended minimum would be:
 
-- **CPU:** 1800% (equivalent to about 18 virtual CPUs)  
-- **Processor:** Intel(R) Core(TM) i9-14900HX (2.20 GHz)  
-- **RAM:** 16 GB installed (15.7 GB usable)  
+- **CPU:** 1800% (equivalent to about 18 virtual CPUs)
+- **Processor:** Intel(R) Core(TM) i9-14900HX (2.20 GHz)
+- **RAM:** 16 GB installed (15.7 GB usable)
 - **System:** 64-bit operating system, x64-based processor
 
 ## Installation Steps
@@ -112,5 +113,3 @@ I’m a front-end developer with 3+ years of experience, skilled in Angular, Rea
 - [GitHub](https://github.com/Marcozvs)
 - [YouTube](https://www.youtube.com/@MarcozDev)
 - [Medium](https://medium.com/@marcoz-silva)
-
-
