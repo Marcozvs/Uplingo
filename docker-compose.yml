@@ -27,3 +27,13 @@ services:
       - pgadmin_data_${ENVIRONMENT}:/var/lib/database_admin
     networks:
       - uplingo_network
+  cognitive:
+    image: ollama/ollama
+    container_name: cognitive-server-${ENVIRONMENT}
+    command: serve
+    ports:
+      - "${COGNITIVE_PORT}:11434"
+    depends_on:
+      - database_admin
+    networks:
+      - uplingo_network
