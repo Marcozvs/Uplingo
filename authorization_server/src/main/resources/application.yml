@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: uplingo_authorization_server
