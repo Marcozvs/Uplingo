@@ -1,0 +1,29 @@
+services:
+  database:
+    image: postgres:16
+    container_name: database-${ENVIRONMENT}
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - pgdata_${ENVIRONMENT}:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - uplingo_network
+  database_admin:
+    image: dpage/pgadmin4:9.2
+    container_name: database-admin-${ENVIRONMENT}
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "${PGADMIN_PORT}:80"
+    depends_on:
+      - database
+    volumes:
+      - pgadmin_data_${ENVIRONMENT}:/var/lib/database_admin
+    networks:
+      - uplingo_network
