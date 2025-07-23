@@ -1,0 +1,14 @@
+<div class="flex flex-col gap-4">
+  <app-user-form [user]="user" *ngIf="userForm && user" />
+
+  <app-user-hobby-form *ngIf="!userForm" />
+
+  <div class="flex justify-end mt-4 gap-2">
+    <app-button
+      [text]="'BUTTON.SAVE' | translate"
+      (click)="handleSubmit()"
+      [disabled]="!getBtnValid"
+      [severity]="'default'"
+    />
+  </div>
+</div>

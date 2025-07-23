@@ -1,0 +1,51 @@
+<div class="flex flex-col gap-6">
+  <app-stepper
+    [steps]="steps"
+    [activeStep]="activeStep"
+    [mode]="stepperMode"
+    [allowClick]="false"
+    (stepChangedEvent)="handleStepChanged($event)"
+  />
+
+  <app-user-form
+    #userForm
+    [hidden]="activeStep !== 0"
+    class="w-full"
+  ></app-user-form>
+
+  <app-user-hobby-form
+    #hobbyForm
+    [hidden]="activeStep !== 1"
+    class="w-full"
+  ></app-user-hobby-form>
+
+  <div class="flex justify-between mt-4">
+    <app-button
+      *ngIf="activeStep === 1"
+      severity="outline"
+      text="Voltar"
+      (click)="handlePrevStep()"
+      type="button"
+    ></app-button>
+
+    <div class="flex gap-2 ml-auto">
+      <app-button
+        *ngIf="activeStep === 0"
+        severity="default"
+        [text]="'BUTTON.NEXT' | translate"
+        [disabled]="!isUserFormValid"
+        (click)="handleNextStep()"
+        type="button"
+      ></app-button>
+
+      <app-button
+        *ngIf="activeStep === steps.length - 1"
+        severity="default"
+        text="Confirmar"
+        [disabled]="!areBothFormsValid"
+        (click)="handleConfirm()"
+        type="button"
+      ></app-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<app-profile-view
+  [user]="user"
+  (userFormVibilityEvent)="handleFormVisibility(true)"
+  (userHobbyFormVibilityEvent)="handleFormVisibility(false)" />
+
+<app-modal
+  [open]="showForm"
+  (closeModalEvent)="handleFormVisibility(true)"
+  [title]="'MODAL.USER_EDIT.TITLE' | translate"
+>
+  <app-profile-form [user]="user" [userForm]="userForm" (profileUpdatedEvent)="handleProfileUpdated()" />
+</app-modal>
