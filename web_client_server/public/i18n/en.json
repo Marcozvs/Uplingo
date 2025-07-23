@@ -1,0 +1,234 @@
+{
+  "ROUTES": {
+    "BREADCRUMB": {
+      "HOME": "Home",
+      "STORY": "Story",
+      "AUTH": "Authentication",
+      "WELCOME": "Welcome",
+      "PROFILE": "Profile",
+      "USER_MANAGEMENT": "User Management",
+      "LOGOUT": "Logout",
+      "SETTINGS": "Settings"
+    }
+  },
+  "LAYOUT": {
+    "SIDEBAR": {
+      "ITEMS": {
+        "NEW_STORY": "New Story",
+        "CONTINUE_STORY": "Continue Story",
+        "PROFILE": "Profile",
+        "USER_MANAGEMENT": "User Management",
+        "ANALYSIS_RESULTS": "Analysis and Results",
+        "COURSES_MANAGEMENT": "Courses Management",
+        "SETTINGS": "Settings",
+        "LOGOUT": "Logout"
+      },
+      "COMPLETED": "Completed",
+      "IN_PROGRESS": "In Progress",
+      "TITLES": {
+        "LAST_STORIES": "Last Stories"
+      },
+      "NO_STORIES": "No stories",
+      "REMOVE_STORY": "Remove"
+    },
+    "FOOTER": {
+      "MESSAGE": "This is a portfolio project by"
+    }
+  },
+  "TOAST": {
+    "USER": {
+      "UPDATED": "User updated successfully",
+      "DELETED": "User deleted successfully",
+      "BANNED": "User banned successfully"
+    },
+    "HOBBY": {
+      "CREATED": "Hobby created successfully",
+      "UPDATED": "Hobby updated successfully",
+      "DELETED": "Hobby deleted successfully"
+    },
+    "STORY": {
+      "CREATED": "Story successfully created",
+      "UPDATED": "Story successfully updated",
+      "DELETED": "Story successfully deleted"
+    },
+    "REQUEST_ENERGY": {
+      "SENT": "Request sent",
+      "ENERGY_GAVE": "Energy gave"
+    },
+    "BAN_USER": {
+      "USER_BANNED": "User banned"
+    }
+  },
+  "FORM": {
+    "FIELD": {
+      "NATIVE_LANGUAGE": {
+        "LABEL": "Native Language",
+        "PLACEHOLDER": "What is your native language?"
+      },
+      "COURSE_NAME": {
+        "LABEL": "Course",
+        "PLACEHOLDER": "Select your course"
+      },
+      "DESCRIPTION": {
+        "LABEL": "Description",
+        "PLACEHOLDER": "Tell us a bit about yourself"
+      },
+      "REASONS_LEARN": {
+        "LABEL": "Reasons to Learn",
+        "PLACEHOLDER": "Why do you want to learn this course?"
+      },
+      "HOBBY": {
+        "LABEL": "Hobby",
+        "PLACEHOLDER": "Describe your hobby here..."
+      },
+      "SEARCH": {
+        "LABEL": "Search",
+        "PLACEHOLDER": "Type to search..."
+      },
+      "LANGUAGE": {
+        "LABEL": "Language",
+        "PLACEHOLDER": "Select your preferred language"
+      },
+      "DARK_MODE": {
+        "LABEL": "Dark Mode",
+        "PLACEHOLDER": "Enable or disable dark mode",
+        "ENABLED": "Enabled",
+        "DISABLED": "Disabled"
+      }
+    }
+  },
+  "OPTION": {
+    "LANGUAGE": {
+      "ENGLISH": "English",
+      "SPANISH": "Spanish",
+      "FRENCH": "French",
+      "PORTUGUESE_BR": "Portuguese"
+    },
+    "COURSE": {
+      "ENGLISH": "English",
+      "SPANISH": "Spanish",
+      "FRENCH": "French",
+      "PORTUGUESE_BR": "Portuguese (Brazil)"
+    },
+    "ROLE": {
+      "ADMIN": "Admin",
+      "STUDENT": "Student",
+      "TEACHER": "Teacher"
+    },
+    "STORY_STATUS": {
+      "CREATED": "Created",
+      "IN_PROGRESS": "In Progress",
+      "COMPLETED": "Completed"
+    },
+    "CHAPTER_STATUS": {
+      "CREATED": "Created",
+      "IN_PROGRESS": "In Progress",
+      "COMPLETED": "Completed"
+    },
+    "GRADE": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D",
+      "F": "F"
+    },
+    "LEVEL": {
+      "A1": "Level A1",
+      "A2": "Level A2",
+      "B1": "Level B1",
+      "B2": "Level B2",
+      "C1": "Level C1",
+      "C2": "Level C2"
+    },
+    "GENRE": {
+      "FANTASY": "Fantasy",
+      "SCI_FI": "Science Fiction",
+      "ROMANCE": "Romance",
+      "MYSTERY": "Mystery",
+      "THRILLER": "Thriller",
+      "HORROR": "Horror",
+      "ADVENTURE": "Adventure",
+      "HISTORICAL": "Historical",
+      "DRAMA": "Drama",
+      "COMEDY": "Comedy",
+      "ACTION": "Action",
+      "CRIME": "Crime",
+      "DETECTIVE": "Detective",
+      "BIOGRAPHY": "Biography",
+      "DYSTOPIAN": "Dystopian",
+      "PARANORMAL": "Paranormal",
+      "SUPERHERO": "Superhero",
+      "FAIRY_TALE": "Fairy Tale",
+      "WESTERN": "Western",
+      "SPOOKY": "Spooky"
+    }
+  },
+  "TAB": {
+    "COURSES": {
+      "ENGLISH": "English",
+      "SPANISH": "Spanish",
+      "FRENCH": "French",
+      "PORTUGUESE_BR": "Portuguese (Brazil)"
+    }
+  },
+  "PAGES": {
+    "WELCOME": {
+      "TITLE": "Thank you for your subscription",
+      "YOUR_HOBBY": "Your Hobby"
+    },
+    "PROFILE": {
+      "NAME": "Name",
+      "DESCRIPTION": "Description",
+      "REASONS_LEARN": "Reasons to learn",
+      "NATIVE_LANGUAGE": "Native Language",
+      "HOBBIES": "Your Hobbies",
+      "NO_HOBBIES": "No hobbies added yet",
+      "ABOUT": "About",
+      "GIVE_ENERGY": "Give energy",
+      "BAN": "Ban"
+    },
+    "USER_MANAGEMENT": {
+      "BANNED": "Banned",
+      "ACTIVE": "Active"
+    },
+    "STORY_FORM": {
+      "TITLE": "Select the module you want to study",
+      "CONFIRM_CREATE_STORY": "This action will consume one unit of energy. Do you want to create a story for this module?",
+      "NO_ENERGY": "You don't have enough energy. Please request the administrator to provide more.",
+      "REQUEST_ENERGY": "Request energy"
+    },
+    "STORY_DINAMIC": {
+      "GENRE": "Genre",
+      "STATUS": "Status",
+      "GRAMMAR_MODULE": "Grammar Module",
+      "COURSE": "Course",
+      "BACK_OVER": "Back Over",
+      "YOUR_CHARACTER": "Your Character",
+      "SUPPORTING_CHARACTER": "Supporting Character",
+      "NAME": "Name",
+      "INTRODUCTION": "Introduction",
+      "NARRATOR": "Narrator",
+      "SELECT_CORRECT_OPTION": "Select the correct option",
+      "RESULT": "Result",
+      "GRADE": "Grade",
+      "XP_EARNED": "XP earned"
+    }
+  },
+  "MODAL": {
+    "HOBBY": {
+      "TITLE": "Tell us about your hobby",
+      "PLACEHOLDER": "Write about your hobby here..."
+    },
+    "USER_EDIT": {
+      "TITLE": "Edit your profile information"
+    }
+  },
+  "BUTTON": {
+    "NEXT": "Next",
+    "HOBBY": "Add hobby",
+    "EDIT": "Edit",
+    "REMOVE": "Remove",
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
+  }
+}
