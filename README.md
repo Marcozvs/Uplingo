@@ -17,7 +17,7 @@ Uplingo is an engaging, personalized, and effective way to learn languages. Thro
 
 <p>
 <strong>Motivation</strong><br>
-Uplingo began as a volunteer project in a public library where people gathered to practice foreign languages like English and Spanish. It was created for my Computer Engineering degree at São Judas Tadeu University, driven by the UN goal of Quality Education.
+Uplingo began as a volunteer project in a public library where people gathered to practice foreign languages like English and Spanish. It was created for my Computer Engineering degree at Universidade São Judas Tadeu, driven by the UN goal of Quality Education.
 </p>
 
 <p>
