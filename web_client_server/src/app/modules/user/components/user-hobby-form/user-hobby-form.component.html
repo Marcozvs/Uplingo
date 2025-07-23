@@ -1,0 +1,76 @@
+<div class="w-full flex flex-col gap-4" (click)="handleCloseMenu()">
+  <p class="font-semibold text-sm text-gray-500">
+    {{ "PAGES.WELCOME.YOUR_HOBBY" | translate }}
+  </p>
+
+  <app-button
+    [text]="'BUTTON.HOBBY' | translate"
+    severity="text"
+    (click)="handleAddHobby()"
+    [disabled]="hobbies.length >= 5"
+  />
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div
+      class="relative"
+      *ngFor="let hobby of hobbies; let i = index"
+      (click)="$event.stopPropagation()"
+    >
+      <app-card
+        [content]="hobby.description"
+        [icon]="'star-outline'"
+        [hoover]="true"
+        [hasMenu]="true"
+        (openMenuEvent)="handleOpenMenu(i)"
+      />
+
+      <div
+        *ngIf="menuIndex === i"
+        class="absolute right-2 top-2 w-32 z-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-md"
+      >
+        <button
+          class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+          (click)="handleEditHobby(i)"
+        >
+          {{ "BUTTON.EDIT" | translate }}
+        </button>
+        <button
+          class="w-full px-4 py-2 text-left text-sm text-red-500 hover:bg-gray-100 dark:hover:bg-gray-700"
+          (click)="handleDeleteHobby(i)"
+        >
+          {{ "BUTTON.REMOVE" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <app-modal
+    [open]="showModal"
+    (closeModalEvent)="showModal = false"
+    [title]="
+      editingIndex !== null
+        ? ('MODAL.HOBBY.EDIT_TITLE' | translate)
+        : ('MODAL.HOBBY.TITLE' | translate)
+    "
+  >
+    <app-form
+      [form]="form"
+      [model]="model"
+      [formConfig]="formConfig"
+      class="w-full"
+    />
+    <div class="flex justify-end mt-4 gap-2">
+      <app-button
+        [text]="'BUTTON.SAVE' | translate"
+        (click)="handleSaveHobby()"
+        [disabled]="!form.valid"
+        [severity]="'default'"
+      />
+      <app-button
+        [text]="'BUTTON.CANCEL' | translate"
+        severity="text"
+        (click)="handleCloseModal()"
+      />
+    </div>
+  </app-modal>
+</div>

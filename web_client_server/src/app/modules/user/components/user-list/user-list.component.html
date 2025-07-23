@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-4">
+  <app-form
+    [form]="form"
+    [model]="model"
+    [formConfig]="formConfig"
+    class="w-full"
+  />
+
+  <ul class="flex flex-col gap-4">
+    <li *ngFor="let user of users">
+      <app-card
+        [imageUrl]="user?.photoUrl"
+        [hoover]="true"
+        [clickable]="true"
+        (clickEvent)="handleViewUser(user.id)"
+      >
+        <div class="flex flex-col gap-4">
+          <p class="font-semibold text-sm text-orange-500">{{ user?.name }}</p>
+          <p class="font-medium text-sm text-gray-500">
+            {{
+              user?.banned
+                ? "PAGES.USER_MANAGEMENT.BANNED"
+                : ("PAGES.USER_MANAGEMENT.ACTIVE" | translate)
+            }}
+          </p>
+        </div>
+      </app-card>
+    </li>
+  </ul>
+</div>
