@@ -1,0 +1,26 @@
+<button
+  type="button"
+  [disabled]="isDisabled"
+  [ngClass]="[
+    baseClasses,
+    severityClasses[severity],
+    disabledClasses,
+    cursorClass
+  ]"
+>
+  <ng-container *ngIf="loading$ | async; else iconTpl">
+    <span
+      class="text-lg mdi mdi-timer-sand animate-spin motion-reduce:animate-none"
+      aria-label="Loading"
+    ></span>
+  </ng-container>
+  <ng-template #iconTpl>
+    <span
+      *ngIf="icon"
+      class="text-lg"
+      [ngClass]="'mdi mdi-' + icon"
+      aria-hidden="true"
+    ></span>
+  </ng-template>
+  {{ text }}
+</button>

@@ -1,0 +1,26 @@
+<div
+  *ngIf="userFacade.user$ | async as user"
+  class="flex min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
+>
+  <app-sidebar />
+
+  <div class="flex flex-col w-full h-[100vh]">
+    <div class="w-full h-[10vh]">
+      <app-header />
+    </div>
+
+    <div class="flex justify-start align-middle items-center w-full h-[5vh]">
+      <app-breadcrumb />
+    </div>
+
+    <main class="w-full min-h-[calc(100vh-20vh)] overflow-y-auto overflow-x-hidden">
+      <router-outlet />
+    </main>
+
+    <div class="w-full h-[5vh]">
+      <app-footer />
+    </div>
+  </div>
+</div>
+
+<app-toast *ngIf="toastQueue$ | async as toasts" [toastQueue]="toasts" />

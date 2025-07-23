@@ -1,0 +1,22 @@
+<app-modal
+  [open]="open"
+  (closeModalEvent)="closeModal()"
+  [title]="'Confirmação'"
+  [content]="content"
+  [clickable]="false"
+>
+  <div
+    class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end sm:gap-4"
+  >
+    <app-button
+      text="Cancelar"
+      severity="text"
+      (click)="closeModal()"
+    ></app-button>
+    <app-button
+      text="Confirmar"
+      severity="default"
+      (click)="confirm()"
+    ></app-button>
+  </div>
+</app-modal>

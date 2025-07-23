@@ -1,0 +1,92 @@
+<div
+  class="w-full flex flex-col items-center gap-4 px-4 sm:px-8 md:px-16 lg:px-36 xl:px-72"
+>
+  <ng-container *ngIf="user">
+    <div
+      class="flex justify-center items-center w-full h-40 sm:h-48 md:h-56 lg:h-[20vh] bg-gradient-to-r from-orange-500 to-orange-500/50 rounded-lg"
+    >
+      <img
+        [src]="user.photoUrl"
+        alt="Profile image"
+        class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full cursor-pointer"
+      />
+    </div>
+
+    <div class="w-full">
+      <app-card
+        [title]="'PAGES.PROFILE.ABOUT' | translate"
+        [hasMenu]="!!(isUserLogged | async)"
+        (openMenuEvent)="userFormVibilityEvent.emit()"
+      >
+        <ul
+          class="flex flex-col gap-4 text-sm text-gray-800 dark:text-gray-200"
+        >
+          <li class="flex flex-col gap-2">
+            <p class="font-semibold text-gray-800 dark:text-gray-50 text-sm">
+              {{ "PAGES.PROFILE.NAME" | translate }}:
+            </p>
+            <p>{{ user.name }}</p>
+          </li>
+          <li class="flex flex-col gap-2">
+            <p class="font-semibold text-gray-800 dark:text-gray-50 text-sm">
+              {{ "PAGES.PROFILE.DESCRIPTION" | translate }}:
+            </p>
+            <p>{{ user.description }}</p>
+          </li>
+          <li class="flex flex-col gap-2">
+            <p class="font-semibold text-gray-800 dark:text-gray-50 text-sm">
+              {{ "PAGES.PROFILE.REASONS_LEARN" | translate }}:
+            </p>
+            <p>{{ user.reasonsLearn }}</p>
+          </li>
+          <li class="flex flex-col gap-2">
+            <p class="font-semibold text-gray-800 dark:text-gray-50 text-sm">
+              {{ "PAGES.PROFILE.NATIVE_LANGUAGE" | translate }}:
+            </p>
+            <p>{{ user.userLanguage | language | translate }}</p>
+          </li>
+        </ul>
+      </app-card>
+    </div>
+
+    <div class="w-full">
+      <app-card
+        title="{{ 'PAGES.PROFILE.HOBBIES' | translate }}"
+        [hasMenu]="!!(isUserLogged | async)"
+        (openMenuEvent)="userHobbyFormVibilityEvent.emit()"
+      >
+        <ul
+          class="flex flex-col gap-2 text-sm text-gray-800 dark:text-gray-200"
+        >
+          <li *ngFor="let hobby of user.hobbies">• {{ hobby.description }}</li>
+          <li
+            *ngIf="!user.hobbies || user.hobbies.length === 0"
+            class="italic text-gray-500 dark:text-gray-400"
+          >
+            {{ "PAGES.PROFILE.NO_HOBBIES" | translate }}
+          </li>
+        </ul>
+      </app-card>
+    </div>
+    <div
+      *ngIf="isUserLoggedAdmin"
+      class="flex justify-center items-center align-middle gap-4"
+    >
+      <app-button
+        (click)="handleGiveEnergy()"
+        [text]="'PAGES.PROFILE.GIVE_ENERGY' | translate"
+      />
+      <app-button
+        (click)="handleBan()"
+        [text]="'PAGES.PROFILE.BAN' | translate"
+        severity="text"
+      />
+    </div>
+  </ng-container>
+</div>
+
+<app-confirmation-modal
+  [open]="showConfirmBanUser"
+  (confirmed)="handleBanUser()"
+  (cancelled)="showConfirmBanUser = false"
+></app-confirmation-modal>

@@ -1,0 +1,40 @@
+<div>
+  <div class="w-full flex gap-4 items-center">
+    <label
+      class="font-semibold transition-colors duration-300"
+      [for]="id"
+      [ngClass]="
+        formControl.value
+          ? 'text-orange-500 dark:text-orange-400'
+          : 'text-gray-600 dark:text-gray-400'
+      "
+    >
+      {{ props.label }}
+      <span *ngIf="props.required" class="font-bold text-danger text-red-400">*</span>
+    </label>
+
+    <button
+      *ngIf="props['helpText']"
+      type="button"
+      [attr.data-tooltip-target]="'tooltip-' + id"
+      data-tooltip-trigger="hover"
+      data-tooltip-style="light"
+      class="mb-[0.375rem] text-white/70 hover:text-white transition-colors duration-500"
+    >
+      <i class="mdi mdi-information-slab-circle-outline text-lg"></i>
+    </button>
+
+    <div
+      [id]="'tooltip-' + id"
+      role="tooltip"
+      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700"
+    >
+      {{ props["helpText"] }}
+      <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+  </div>
+
+  <div class="relative text-white-dark">
+    <ng-container #fieldComponent></ng-container>
+  </div>
+</div>

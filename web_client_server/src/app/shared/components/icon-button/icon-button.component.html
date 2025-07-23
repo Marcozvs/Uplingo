@@ -1,0 +1,33 @@
+<button
+  type="button"
+  [disabled]="isDisabled"
+  [attr.aria-label]="ariaLabel"
+  class="group"
+  [ngClass]="[
+    baseClasses,
+    disabledClasses,
+    isDisabled ? 'bg-transparent' : 'hover:bg-gray-300 dark:hover:bg-gray-600',
+    'focus:outline-none focus:ring-0'
+  ]"
+>
+  <ng-container *ngIf="isLoading; else iconTpl">
+    <span
+      class="text-lg mdi mdi-timer-sand animate-spin motion-reduce:animate-none text-gray-600 dark:text-gray-300"
+      aria-label="Loading"
+    ></span>
+  </ng-container>
+
+  <ng-template #iconTpl>
+    <span
+      class="text-lg mdi transition-colors duration-200"
+      [ngClass]="
+        'mdi-' +
+        icon +
+        (isDisabled
+          ? ' text-gray-400 dark:text-gray-500'
+          : ' text-gray-400 dark:text-gray-500 group-hover:text-white-50')
+      "
+      aria-hidden="true"
+    ></span>
+  </ng-template>
+</button>

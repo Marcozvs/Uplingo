@@ -1,0 +1,33 @@
+<div class="w-full flex justify-end items-center align-middle p-4">
+  <div class="w-full flex justify-end items-center align-middle p-4">
+    <ng-container *ngIf="user$ | async as user">
+      <div class="flex gap-2 align-middle items-center">
+        <div class="flex gap-2 align-middle items-center">
+          <span
+            class="font-bold text-lg text-orange-500 mdi mdi-lightning-bolt"
+          ></span>
+          <p class="font-semibold text-lg text-gray-500 dark:text-gray-300">
+            {{ user.energy }}
+          </p>
+        </div>
+
+        <div
+          *ngIf="hasResources"
+          class="font-bold text-lg flex gap-2 align-middle items-center"
+        >
+          <p class="font-semibold text-lg text-orange-500">XP</p>
+          <p class="font-semibold text-lg text-gray-500 dark:text-gray-300">
+            {{ user.totalXP }}
+          </p>
+        </div>
+
+        <img
+          [src]="user.photoUrl"
+          alt="Card image"
+          class="ml-4 w-8 h-8 rounded-full cursor-pointer"
+          (click)="handleNavigateToProfile()"
+        />
+      </div>
+    </ng-container>
+  </div>
+</div>
