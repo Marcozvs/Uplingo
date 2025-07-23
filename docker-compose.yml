@@ -87,6 +87,15 @@ services:
       - authorization
     networks:
       - uplingo_network
+  web:
+    build: ./web_client_server
+    container_name: web-client-server-${ENVIRONMENT}
+    ports:
+      - "${WEB_CLIENT_PORT}:4200"
+    depends_on:
+      - resource
+    networks:
+      - uplingo_network
 networks:
   uplingo_network:
     name: uplingo_network_${NETWORK_ENVIRONMENT}
