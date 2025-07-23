@@ -63,6 +63,30 @@ services:
       - cognitive
     networks:
       - uplingo_network
+  resource:
+    build: ./resource_server
+    container_name: resource-server-${ENVIRONMENT}
+    environment:
+      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+      - SPRING_SECURITY_OAUTH2_RESOURCESERVER_ISSUER_URI=${BASE_URL}authorization
+      - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWK_SET_URI=${BASE_URL}authorization:8080/oauth2/jwks
+      - SPRING_AI_OLLAMA_BASEURL=${BASE_URL}cognitive:11434
+      - SPRING_AI_OLLAMA_CHAT_OPTIONS_MODEL=${AI_MODEL}
+      - CORS_ALLOWED_ORIGIN_WEB_CLIENT=${BASE_URL}${BASE_SERVER}:${WEB_CLIENT_PORT}
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_PORT=${MAIL_PORT}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+    ports:
+      - "${RESOURCE_PORT}:8081"
+    depends_on:
+      - authorization
+    networks:
+      - uplingo_network
 networks:
   uplingo_network:
     name: uplingo_network_${NETWORK_ENVIRONMENT}
