@@ -1,0 +1,45 @@
+<div class="w-full">
+  <select
+    [id]="id"
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [disabled]="props.disabled ?? false"
+    [ngClass]="[
+      formControl.value
+        ? 'border-orange-500 text-orange-500 focus:ring-orange-500 focus:border-orange-500'
+        : 'border-gray-300 text-gray-900 focus:ring-gray-300 focus:border-gray-300',
+      'bg-gray-50 text-sm rounded-lg block w-full p-2.5',
+      'dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400',
+      formControl.value
+        ? 'dark:text-orange-400 dark:focus:ring-orange-500 dark:focus:border-orange-500'
+        : 'dark:text-white dark:focus:ring-gray-300 dark:focus:border-gray-300',
+      'hover:bg-gray-100 cursor-pointer'
+    ]"
+    (change)="props['handleChange']?.($event)"
+  >
+    <option
+      *ngIf="props.placeholder"
+      value=""
+      disabled
+      [selected]="!formControl.value"
+    >
+      {{ props.placeholder | translate }}
+    </option>
+
+    <option
+      *ngFor="let option of optionsArray"
+      [value]="option.value"
+      [disabled]="option.disabled"
+    >
+      {{ option.label | translate }}
+    </option>
+  </select>
+
+  <div
+    class="mt-1 text-xs text-red-500"
+    role="alert"
+    *ngIf="showError && formControl.errors"
+  >
+    <formly-validation-message [field]="field"></formly-validation-message>
+  </div>
+</div>

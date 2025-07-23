@@ -1,0 +1,4 @@
+<app-story-dinamic *ngIf="storyId; else noStory" [storyId]="storyId" />
+<ng-template #noStory>
+  <app-story-form />
+</ng-template>

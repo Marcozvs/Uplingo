@@ -1,0 +1,38 @@
+@startuml Container
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Container
+
+Person_Ext(user, "User", "User who interacts with the system")
+Container(webapp, "Web Application", "Angular", "Frontend of the application")
+Container(resource, "Resource Service", "Spring Boot", "Backend for resources")
+Container(authorization, "Authorization Service", "Spring Boot", "Backend for authorization")
+Container(cognitive, "Cognitive Service", "Ollama", "Cognitive AI service")
+ContainerDb(database, "Database", "PostgreSQL", "Stores system information")
+Container(pgadmin, "PgAdmin", "Web", "Tool for managing the PostgreSQL database")
+Person_Ext(databaseAdmin, "Administrator", "Administers the system")
+
+Rel(user, webapp, "Uses")
+Rel(webapp, resource, "HTTP(S) requests")
+Rel(webapp, authorization, "HTTP(S) requests")
+Rel(resource, cognitive, "Calls API")
+Rel(resource, database, "SQL", "Uses")
+Rel(databaseAdmin, pgadmin, "Uses")
+Rel(pgadmin, database, "Manages")
+
+@enduml
+", "Angular", "Frontend of the application")
+Container(resource, "Resource Service", "Spring Boot", "Backend for resources")
+Container(authorization, "Authorization Service", "Spring Boot", "Backend for authorization")
+Container(cognitive, "Cognitive Service", "Ollama", "Cognitive AI service")
+ContainerDb(database, "Database", "PostgreSQL", "Stores system information")
+Person_Ext(databaseAdmin, "Database Administrator", "Administers the database")
+
+Rel(user, webapp, "Uses")
+Rel(webapp, resource, "HTTP(S) requests")
+Rel(webapp, authorization, "HTTP(S) requests")
+Rel(resource, cognitive, "Calls API")
+Rel(resource, database, "SQL", "Uses")
+Rel(databaseAdmin, database, "Administers")
+
+@enduml

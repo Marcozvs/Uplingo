@@ -1,0 +1,234 @@
+{
+  "ROUTES": {
+    "BREADCRUMB": {
+      "HOME": "Accueil",
+      "STORY": "Histoire",
+      "AUTH": "Authentification",
+      "WELCOME": "Bienvenue",
+      "PROFILE": "Profil",
+      "USER_MANAGEMENT": "Gestion des utilisateurs",
+      "LOGOUT": "Déconnexion",
+      "SETTINGS": "Paramètres"
+    }
+  },
+  "LAYOUT": {
+    "SIDEBAR": {
+      "ITEMS": {
+        "NEW_STORY": "Nouvelle Histoire",
+        "CONTINUE_STORY": "Continuer l'Histoire",
+        "PROFILE": "Profil",
+        "USER_MANAGEMENT": "Gestion des utilisateurs",
+        "ANALYSIS_RESULTS": "Analyses et résultats",
+        "COURSES_MANAGEMENT": "Gestion des cours",
+        "SETTINGS": "Paramètres",
+        "LOGOUT": "Déconnexion"
+      },
+      "COMPLETED": "Terminé",
+      "IN_PROGRESS": "En cours",
+      "TITLES": {
+        "LAST_STORIES": "Dernières histoires"
+      },
+      "NO_STORIES": "Aucune histoire",
+      "REMOVE_STORY": "Supprimer"
+    },
+    "FOOTER": {
+      "MESSAGE": "Ceci est un projet de portfolio par"
+    }
+  },
+  "TOAST": {
+    "USER": {
+      "UPDATED": "Utilisateur mis à jour avec succès",
+      "DELETED": "Utilisateur supprimé avec succès",
+      "BANNED": "Utilisateur banni avec succès"
+    },
+    "HOBBY": {
+      "CREATED": "Loisir créé avec succès",
+      "UPDATED": "Loisir mis à jour avec succès",
+      "DELETED": "Loisir supprimé avec succès"
+    },
+    "STORY": {
+      "CREATED": "Histoire créée avec succès",
+      "UPDATED": "Histoire mise à jour avec succès",
+      "DELETED": "Histoire supprimée avec succès"
+    },
+    "REQUEST_ENERGY": {
+      "SENT": "Demande envoyée",
+      "ENERGY_GAVE": "Énergie fournie"
+    },
+    "BAN_USER": {
+      "USER_BANNED": "Utilisateur banni"
+    }
+  },
+  "FORM": {
+    "FIELD": {
+      "NATIVE_LANGUAGE": {
+        "LABEL": "Langue maternelle",
+        "PLACEHOLDER": "Quelle est votre langue maternelle ?"
+      },
+      "COURSE_NAME": {
+        "LABEL": "Cours",
+        "PLACEHOLDER": "Sélectionnez votre cours"
+      },
+      "DESCRIPTION": {
+        "LABEL": "Description",
+        "PLACEHOLDER": "Parlez-nous un peu de vous"
+      },
+      "REASONS_LEARN": {
+        "LABEL": "Raisons d'apprendre",
+        "PLACEHOLDER": "Pourquoi voulez-vous apprendre ce cours ?"
+      },
+      "HOBBY": {
+        "LABEL": "Loisir",
+        "PLACEHOLDER": "Décrivez votre loisir ici..."
+      },
+      "SEARCH": {
+        "LABEL": "Rechercher",
+        "PLACEHOLDER": "Tapez pour rechercher..."
+      },
+      "LANGUAGE": {
+        "LABEL": "Langue",
+        "PLACEHOLDER": "Sélectionnez votre langue préférée"
+      },
+      "DARK_MODE": {
+        "LABEL": "Mode sombre",
+        "PLACEHOLDER": "Activer ou désactiver le mode sombre",
+        "ENABLED": "Activé",
+        "DISABLED": "Désactivé"
+      }
+    }
+  },
+  "OPTION": {
+    "LANGUAGE": {
+      "ENGLISH": "Anglais",
+      "SPANISH": "Espagnol",
+      "FRENCH": "Français",
+      "PORTUGUESE_BR": "Portugais"
+    },
+    "COURSE": {
+      "ENGLISH": "Cours d'anglais",
+      "SPANISH": "Cours d'espagnol",
+      "FRENCH": "Cours de français",
+      "PORTUGUESE_BR": "Cours de portugais (Brésil)"
+    },
+    "ROLE": {
+      "ADMIN": "Administrateur",
+      "STUDENT": "Étudiant",
+      "TEACHER": "Enseignant"
+    },
+    "STORY_STATUS": {
+      "CREATED": "Créée",
+      "IN_PROGRESS": "En cours",
+      "COMPLETED": "Terminée"
+    },
+    "CHAPTER_STATUS": {
+      "CREATED": "Créé",
+      "IN_PROGRESS": "En cours",
+      "COMPLETED": "Terminé"
+    },
+    "GRADE": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D",
+      "F": "F"
+    },
+    "LEVEL": {
+      "A1": "Niveau A1",
+      "A2": "Niveau A2",
+      "B1": "Niveau B1",
+      "B2": "Niveau B2",
+      "C1": "Niveau C1",
+      "C2": "Niveau C2"
+    },
+    "GENRE": {
+      "FANTASY": "Fantastique",
+      "SCI_FI": "Science-fiction",
+      "ROMANCE": "Romance",
+      "MYSTERY": "Mystère",
+      "THRILLER": "Thriller",
+      "HORROR": "Horreur",
+      "ADVENTURE": "Aventure",
+      "HISTORICAL": "Historique",
+      "DRAMA": "Drame",
+      "COMEDY": "Comédie",
+      "ACTION": "Action",
+      "CRIME": "Crime",
+      "DETECTIVE": "Détective",
+      "BIOGRAPHY": "Biographie",
+      "DYSTOPIAN": "Dystopique",
+      "PARANORMAL": "Paranormal",
+      "SUPERHERO": "Super-héros",
+      "FAIRY_TALE": "Conte de fées",
+      "WESTERN": "Western",
+      "SPOOKY": "Effrayant"
+    }
+  },
+  "TAB": {
+    "COURSES": {
+      "ENGLISH": "Anglais",
+      "SPANISH": "Espagnol",
+      "FRENCH": "Français",
+      "PORTUGUESE_BR": "Portugais (Brésil)"
+    }
+  },
+  "PAGES": {
+    "WELCOME": {
+      "TITLE": "Merci pour votre abonnement",
+      "YOUR_HOBBY": "Votre loisir"
+    },
+    "PROFILE": {
+      "NAME": "Nom",
+      "DESCRIPTION": "Description",
+      "REASONS_LEARN": "Raisons d'apprendre",
+      "NATIVE_LANGUAGE": "Langue maternelle",
+      "HOBBIES": "Vos loisirs",
+      "NO_HOBBIES": "Aucun loisir ajouté pour le moment",
+      "ABOUT": "À propos",
+      "GIVE_ENERGY": "Donner de l'énergie",
+      "BAN": "Bannir"
+    },
+    "USER_MANAGEMENT": {
+      "BANNED": "Banni",
+      "ACTIVE": "Actif"
+    },
+    "STORY_FORM": {
+      "TITLE": "Sélectionnez le module que vous souhaitez étudier",
+      "CONFIRM_CREATE_STORY": "Cette action consommera une unité d'énergie. Voulez-vous créer une histoire pour ce module ?",
+      "NO_ENERGY": "Vous n'avez pas assez d'énergie. Veuillez demander à l'administrateur d'en fournir davantage.",
+      "REQUEST_ENERGY": "Demander de l'énergie"
+    },
+    "STORY_DINAMIC": {
+      "GENRE": "Genre",
+      "STATUS": "Statut",
+      "GRAMMAR_MODULE": "Module de grammaire",
+      "COURSE": "Cours",
+      "BACK_OVER": "Résumé",
+      "YOUR_CHARACTER": "Votre personnage",
+      "SUPPORTING_CHARACTER": "Personnage secondaire",
+      "NAME": "Nom",
+      "INTRODUCTION": "Introduction",
+      "NARRATOR": "Narrateur",
+      "SELECT_CORRECT_OPTION": "Sélectionnez la bonne option",
+      "RESULT": "Résultat",
+      "GRADE": "Note",
+      "XP_EARNED": "XP gagnée"
+    }
+  },
+  "MODAL": {
+    "HOBBY": {
+      "TITLE": "Parlez-nous de votre loisir",
+      "PLACEHOLDER": "Écrivez votre loisir ici..."
+    },
+    "USER_EDIT": {
+      "TITLE": "Modifiez les informations de votre profil"
+    }
+  },
+  "BUTTON": {
+    "NEXT": "Suivant",
+    "HOBBY": "Ajouter un loisir",
+    "EDIT": "Modifier",
+    "REMOVE": "Supprimer",
+    "SAVE": "Enregistrer",
+    "CANCEL": "Annuler"
+  }
+}

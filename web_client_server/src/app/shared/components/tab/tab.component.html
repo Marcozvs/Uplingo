@@ -1,0 +1,24 @@
+<div class="flex flex-wrap gap-2 justify-center items-center">
+  <app-card
+    *ngFor="let tab of tabs"
+    [icon]="tab.icon"
+    [content]="tab.title"
+    [clickable]="!tab.disabled"
+    [hoover]="!tab.disabled"
+    [background]="
+      tab.disabled
+        ? 'bg-gray-200 dark:bg-gray-700'
+        : isActive(tab)
+        ? 'bg-orange-400 dark:bg-orange-500'
+        : 'bg-white dark:bg-gray-800'
+    "
+    [contentColor]="
+      tab.disabled
+        ? 'text-gray-400 dark:text-gray-500'
+        : isActive(tab)
+        ? 'text-white'
+        : 'text-gray-800 dark:text-gray-200'
+    "
+    (clickEvent)="setActive(tab)"
+  />
+</div>

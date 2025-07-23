@@ -10,9 +10,24 @@
   <img src="https://img.shields.io/badge/PRs-not%20allowed-red">
 </p>
 
-<p align="center">
-  Uplingo is an educational platform inspired by Duolingo, designed to help students improve their vocabulary and language skills.  
-  Built with the help of more than 10 community participants, Uplingo has significantly enhanced users' learning experience.
+<p>
+<strong>Definition</strong><br>
+Uplingo is an engaging, personalized, and effective way to learn languages. Through interactive stories, you practice vocabulary and grammar naturally, with AI adapting themes and challenges to your level, interests, and goals.
+</p>
+
+<p>
+<strong>Motivation</strong><br>
+Uplingo began as a volunteer project in a public library where people gathered to practice foreign languages like English and Spanish. It was created for my Computer Engineering degree at Universidade São Judas Tadeu, driven by the UN goal of Quality Education.
+</p>
+
+<p>
+<strong>Target Audience</strong><br>
+Designed for students, professionals, and self-learners seeking practical, flexible, and motivating language learning. Lessons fit into short daily breaks, keeping study light and continuous.
+</p>
+
+<p>
+<strong>Problem it Solves</strong><br>
+Traditional lessons can be monotonous and disconnected. Uplingo turns learning into immersive stories that make studying engaging, practical, and easy to integrate into your routine.
 </p>
 
 <p align="center">
@@ -20,6 +35,7 @@
     <img src="https://img.youtube.com/vi/LUQ8-kdwiQs/0.jpg" alt="Watch the video" width="400"/>
   </a>
 </p>
+<p align="center"><em>Click to watch the full presentation video on YouTube</em></p>
 
 ## Technologies Used
 
@@ -103,8 +119,6 @@ This project does not accept contributions as it serves solely as a portfolio pi
 
 ## Contributors
 
-- Only me
-
 ### About Me
 
 I’m a front-end developer with 3+ years of experience, skilled in Angular, React, and Vue, creating efficient, user-focused interfaces and systems.
@@ -113,3 +127,42 @@ I’m a front-end developer with 3+ years of experience, skilled in Angular, Rea
 - [GitHub](https://github.com/Marcozvs)
 - [YouTube](https://www.youtube.com/@MarcozDev)
 - [Medium](https://medium.com/@marcoz-silva)
+
+## Software architecture
+
+<p>
+In this section, we present the software architecture using the C4 model and UML diagrams to clearly illustrate the system's structure, components, and interactions, making it easier to understand and maintain.
+</p>
+
+### Context
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1HtnzPQ1rlSPXeVrr2APA7okR7eaecAbh/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="./images/context.jpeg" alt="Uplingo Context"/>
+  </a>
+</p>
+<p><em>
+This context diagram highlights the interaction between the user and the learning system, which delivers personalized educational content.
+</em></p>
+
+### Container
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1cJIk6l87DJfN3UDrMwME3oMiS5JvGfNY/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="./images/container.jpeg" alt="Uplingo Container"/>
+  </a>
+</p>
+<p><em>
+This diagram represents Uplingo's container architecture using the C4 model. It shows how the user interacts with the Angular web application, which communicates with two backend services: the Resource Service and the Authorization Service, both built with Spring Boot. The Resource Service integrates with the Cognitive Service powered by Ollama for AI capabilities and connects to a PostgreSQL database for data storage. Database administration is managed through PgAdmin. This structure organizes responsibilities, improves scalability, and ensures secure access to resources.
+</em></p>
+
+### Entity Relationship Diagram
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1251UUj4co4V5hMMHCUZte7U8i1i4s7cl/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="./images/entity-relationship-diagram.png" alt="Entity Relationship Diagram"/>
+  </a>
+</p>
+<p><em>
+This diagram provides a detailed explanation of the relationships between entities in the platform, offering a clear view of the database structure. It helps visualize how data is organized and how the tables interact with each other.
+</em></p>

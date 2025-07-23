@@ -1,0 +1,29 @@
+<div class="flex flex-col gap-6 items-center w-full">
+  <p class="font-bold text-lg text-orange-500">
+    {{ "PAGES.STORY_FORM.TITLE" | translate }}
+  </p>
+
+  <app-tab
+    [tabs]="tabs"
+    [activeTabId]="tabSelectedValue"
+    (tabChange)="tabSelectedValue = $event.id"
+  />
+
+  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full px-48">
+    <li *ngFor="let module of filteredModules$ | async">
+      <app-card
+        [title]="module.name"
+        [content]="module.description"
+        [clickable]="true"
+        (clickEvent)="handleConfirmCreateStory(module.id)"
+      />
+    </li>
+  </ul>
+
+  <app-confirmation-modal
+    [content]="confirmationContent"
+    [open]="confirmationModalOpen"
+    (confirmed)="handleModalConfirmed()"
+    (cancelled)="handleModalCancelled()"
+  />
+</div>

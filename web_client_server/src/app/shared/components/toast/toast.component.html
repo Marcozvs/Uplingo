@@ -1,0 +1,18 @@
+<div class="fixed top-6 right-6 z-50 flex flex-col gap-4 w-80 max-w-full">
+  <app-card
+    *ngFor="let toast of localToasts"
+    [class.opacity-0]="!toast.displayed"
+    [class.opacity-100]="toast.displayed"
+    [class.pointer-events-none]="!toast.displayed"
+    class="transition-opacity duration-300"
+    [icon]="getIconByType(toast.severity)"
+    [iconColor]="getIconColor(toast.severity)"
+    [title]="toast.title"
+    [content]="toast.message"
+    [background]="getBackgroundColor(toast.severity)"
+    titleColor="text-gray-100"
+    contentColor="text-gray-100"
+    [clickable]="false"
+    [translucent]="true"
+  />
+</div>

@@ -1,0 +1,173 @@
+<aside
+  id="default-sidebar"
+  class="transition-all duration-500 ease-in-out overflow-hidden group"
+  [class.fixed]="isMobileOrTablet"
+  [ngClass]="{
+    'w-64': isSidebarOpen,
+    'w-14': !isSidebarOpen,
+    'h-[10vh] border-none': isMobileOrTablet && !isSidebarOpen,
+    'h-screen border-r-2 border-gray-300 dark:border-gray-800':
+      !isMobileOrTablet || isSidebarOpen,
+    'cursor-ew-resize': true
+  }"
+  aria-label="Sidebar"
+  (mouseenter)="handleChangeHover(true)"
+  (mouseleave)="handleChangeHover(false)"
+  (click)="handleButtonClick($event)"
+>
+  <div class="flex flex-col gap-4 h-full px-3 py-4 bg-gray-50 dark:bg-gray-900">
+    <div class="relative flex items-center justify-between h-10">
+      <ng-container *ngIf="isSidebarOpen; else collapsedView">
+        <img src="logo.png" alt="Logo" class="w-7 h-8" />
+        <app-icon-button
+          icon="menu-open"
+          ariaLabel="Close"
+          tooltip="Close sidebar"
+          (click)="handleButtonClick($event)"
+        />
+      </ng-container>
+
+      <ng-template #collapsedView>
+        <div class="relative w-10 h-10">
+          <img
+            src="logo.png"
+            alt="Logo"
+            class="absolute inset-0 w-7 h-8 transition-opacity duration-300"
+            [ngClass]="{
+              'opacity-100 pointer-events-auto': !isHovered,
+              'opacity-0 pointer-events-none': isHovered
+            }"
+          />
+          <div
+            class="absolute inset-0 transition-opacity duration-300 flex items-center justify-center"
+            [ngClass]="{
+              'opacity-0 pointer-events-none': !isHovered,
+              'opacity-100 pointer-events-auto': isHovered
+            }"
+          >
+            <app-icon-button
+              icon="menu-close"
+              ariaLabel="Open"
+              tooltip="Open sidebar"
+              (click)="handleButtonClick($event)"
+            />
+          </div>
+        </div>
+      </ng-template>
+    </div>
+
+    <div
+      *ngIf="isSidebarOpen"
+      class="w-full h-full flex flex-col gap-4 justify-between transition-opacity duration-300 opacity-100"
+    >
+      <ul class="w-full h-min flex flex-col gap-2">
+        <li *ngFor="let option of firstOptions">
+          <app-card
+            background="bg-gray-50 dark:bg-gray-900"
+            [iconColor]="
+              getIsActiveOption(option) ? 'text-orange-500' : 'text-gray-500'
+            "
+            [contentColor]="
+              getIsActiveOption(option) ? 'text-orange-500' : 'text-gray-500'
+            "
+            padding="px-4 py-2"
+            [hoover]="true"
+            [clickable]="true"
+            [content]="option.title | translate"
+            [icon]="option.icon"
+            (click)="handleButtonOption($event, option)"
+          />
+        </li>
+      </ul>
+      <div
+        class="w-full h-full flex flex-col gap-2 overflow-x-hidden overflow-y-auto"
+      >
+        <p class="font-bold text-md text-orange-500 dark:text-orange-300">
+          {{ "LAYOUT.SIDEBAR.TITLES.LAST_STORIES" | translate }}
+        </p>
+        <ul
+          *ngIf="stories && stories.length > 0; else noStories"
+          class="flex flex-col gap-2"
+        >
+          <li *ngFor="let story of stories">
+            <div class="relative">
+              <app-card
+                [clickable]="true"
+                [hoover]="true"
+                background="bg-gray-100 dark:bg-gray-800"
+                [hasMenu]="true"
+                (openMenuEvent)="handleOpenMenu(story.id)"
+                (click)="handleNavigateToStory($event, story.id)"
+              >
+                <div class="flex flex-col gap-4">
+                  <p
+                    [class]="
+                      getIsActiveStory(story.id)
+                        ? 'transition-all duration-500 font-semibold text-sm text-orange-500'
+                        : 'transition-all duration-500 font-semibold text-sm text-gray-500'
+                    "
+                  >
+                    {{ story?.title }}
+                  </p>
+                  <p
+                    [class]="
+                      getIsActiveStory(story.id)
+                        ? 'transition-all duration-500 font-normal text-sm text-orange-500'
+                        : 'transition-all duration-500 font-normal text-sm text-gray-500'
+                    "
+                  >
+                    {{
+                      story?.storyStatus === storyStatus.COMPLETED
+                        ? ("LAYOUT.SIDEBAR.COMPLETED" | translate)
+                        : ("LAYOUT.SIDEBAR.IN_PROGRESS" | translate)
+                    }}
+                  </p>
+                </div>
+              </app-card>
+              <div
+                *ngIf="openPopoverId === story.id"
+                class="absolute z-50 top-10 right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg w-48 p-3 text-sm"
+              >
+                <ul class="space-y-2">
+                  <li>
+                    <button (click)="handleRemoveStory(story.id)" class="w-full text-left hover:text-orange-500">
+                      {{ "LAYOUT.SIDEBAR.REMOVE_STORY" | translate }}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ng-template #noStories>
+          <div
+            class="flex flex-col gap-2 justify-center items-center align-middle"
+          >
+            <p class="font-semibold text-gray-600 text-sm">
+              {{ "LAYOUT.SIDEBAR.NO_STORIES" | translate }}
+            </p>
+          </div>
+        </ng-template>
+      </div>
+      <ul class="w-full h-min flex flex-col gap-2">
+        <li *ngFor="let option of secondOptions">
+          <app-card
+            background="bg-gray-50 dark:bg-gray-900"
+            [iconColor]="
+              getIsActiveOption(option) ? 'text-orange-500' : 'text-gray-500'
+            "
+            [contentColor]="
+              getIsActiveOption(option) ? 'text-orange-500' : 'text-gray-500'
+            "
+            padding="px-4 py-2"
+            [hoover]="true"
+            [clickable]="true"
+            [content]="option.title | translate"
+            [icon]="option.icon"
+            (click)="handleButtonOption($event, option)"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>

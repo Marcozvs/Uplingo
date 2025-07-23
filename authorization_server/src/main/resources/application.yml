@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: uplingo_authorization_server
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: ${SPRING_SECURITY_OAUTH2_AUTHORIZATION_SERVER_ISSUER}
+      client:
+        registration:
+          google:
+            client-id: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_UPLINGO_WEB_CLIENT_ID}
+            client-secret: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_UPLINGO_WEB_CLIENT_SECRET}
+            redirect-uri: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_UPLINGO_WEB_REDIRECT_URI}
+            scope: openid, profile, email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+            user-name-attribute: email
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    ssl:
+      trust: ${MAIL_HOST}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+cors:
+  allowed-origin-resource: ${CORS_ALLOWED_ORIGIN_RESOURCE}
+  allowed-origin-web-client: ${CORS_ALLOWED_ORIGIN_WEB_CLIENT}

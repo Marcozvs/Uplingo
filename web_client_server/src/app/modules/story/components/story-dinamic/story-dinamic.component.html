@@ -1,0 +1,202 @@
+<div *ngIf="!showSkeleton; else loading">
+  <div
+    *ngIf="story"
+    class="flex flex-col gap-4 justify-center items-center align-middle px-48"
+  >
+    <h1 class="font-bold text-2xl text-orange-500">
+      {{ story.title }}
+    </h1>
+    <div class="w-full flex gap-4 justify-center align-middle items-center">
+      <div class="flex gap-2">
+        <p class="font-semibold text-gray-500 dark:text-gray-400">
+          {{ "PAGES.STORY_DINAMIC.GENRE" | translate }}:
+        </p>
+        <p class="text-gray-500 dark:text-gray-400">
+          {{ getStoryGenre() | translate }}
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <p class="font-semibold text-gray-500 dark:text-gray-400">
+          {{ "PAGES.STORY_DINAMIC.STATUS" | translate }}:
+        </p>
+        <p class="text-gray-500 dark:text-gray-400">
+          {{ getStoryStatus() | translate }}
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <p class="font-semibold text-gray-500 dark:text-gray-400">
+          {{ "PAGES.STORY_DINAMIC.GRAMMAR_MODULE" | translate }}:
+        </p>
+        <p class="text-gray-500 dark:text-gray-400">
+          {{ grammarModuleItem?.name ?? "--" | translate }}
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <p class="font-semibold text-gray-500 dark:text-gray-400">
+          {{ "PAGES.STORY_DINAMIC.COURSE" | translate }}:
+        </p>
+        <p class="text-gray-500 dark:text-gray-400">
+          {{ getStoryCourseName() | translate }}
+        </p>
+      </div>
+    </div>
+    <app-card
+      contentColor="text-gray-500 dark:text-gray-400"
+      [title]="'PAGES.STORY_DINAMIC.BACK_OVER' | translate"
+      [content]="story.backOver"
+    />
+    <div class="flex gap-4">
+      <app-card
+        class="w-full"
+        [title]="'PAGES.STORY_DINAMIC.YOUR_CHARACTER' | translate"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-2">
+            <p class="font-semibold text-gray-500 dark:text-gray-400">
+              {{ "PAGES.STORY_DINAMIC.NAME" | translate }}:
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+              {{ story.characters[0].name }}
+            </p>
+          </div>
+          <p class="text-gray-500 dark:text-gray-400">
+            {{ story.characters[0].description }}
+          </p>
+        </div>
+      </app-card>
+      <app-card
+        class="w-full"
+        [title]="'PAGES.STORY_DINAMIC.SUPPORTING_CHARACTER' | translate"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-2">
+            <p class="font-semibold text-gray-500 dark:text-gray-400">
+              {{ "PAGES.STORY_DINAMIC.NAME" | translate }}:
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+              {{ story.characters[1].name }}
+            </p>
+          </div>
+          <p class="text-gray-500 dark:text-gray-400">
+            {{ story.characters[1].description }}
+          </p>
+        </div>
+      </app-card>
+    </div>
+    <div class="flex flex-col gap-4">
+      <ul
+        *ngIf="story.chapters && story.chapters.length > 0"
+        class="flex flex-col gap-4"
+      >
+        <li *ngFor="let chapter of story.chapters" class="flex flex-col gap-4">
+          <div class="flex gap-4">
+            <p class="font-bold text-xl text-gray-500">
+              {{ story.chapters.length }}.
+            </p>
+            <h2 class="font-bold text-xl text-gray-500">
+              {{ chapter.title }}
+            </h2>
+          </div>
+          <app-card
+            contentColor="text-gray-500 dark:text-gray-400"
+            [title]="'PAGES.STORY_DINAMIC.INTRODUCTION' | translate"
+            [content]="chapter.introduction"
+          />
+          <ul class="flex flex-col gap-4">
+            <li
+              class="flex flex-col gap-4"
+              *ngFor="let act of getNarrationAnswerSteps()"
+            >
+              <app-card
+                contentColor="text-gray-500 dark:text-gray-400"
+                [title]="'PAGES.STORY_DINAMIC.NARRATOR' | translate"
+                [content]="act.narration?.content"
+              />
+              <ul
+                class="flex flex-col gap-4"
+                *ngIf="act.answers && act.answers.length > 0"
+              >
+                <li
+                  class="flex flex-col gap-2"
+                  *ngFor="let answer of act.answers"
+                >
+                  <app-card
+                    *ngIf="getShowAnswer(answer)"
+                    [class]="
+                      getIsSupportingCharacter(answer.characterType) ||
+                      answer.answerIndex !== currentDialogIndex
+                        ? ''
+                        : 'transition-all duration-300 ease-in-out transform hover:scale-[1.02]'
+                    "
+                    contentColor="text-gray-500 dark:text-gray-400"
+                    [background]="getIsAnswerCorrect(answer.id)"
+                    [title]="answer.characterName"
+                    [content]="answer.content"
+                    [clickable]="
+                      getIsSupportingCharacter(answer.characterType) ||
+                      answer.answerIndex !== currentDialogIndex
+                        ? false
+                        : true
+                    "
+                    [hoover]="
+                      getIsSupportingCharacter(answer.characterType) ||
+                      answer.answerIndex !== currentDialogIndex
+                        ? false
+                        : true
+                    "
+                    (click)="handleCheckAnswer(answer)"
+                  />
+                  <p
+                    *ngIf="
+                      getIsSupportingCharacter(answer.characterType) &&
+                      answer.answerIndex === currentDialogIndex
+                    "
+                    class="font-bold text-center text-lg text-gray-500 dark:text-gray-400"
+                  >
+                    {{
+                      "PAGES.STORY_DINAMIC.SELECT_CORRECT_OPTION" | translate
+                    }}
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div
+            *ngIf="chapter && chapter.results && chapter.results.length > 0"
+            class="flex flex-col gap-4"
+          >
+            <app-card
+              *ngFor="let result of chapter.results"
+              [title]="'PAGES.STORY_DINAMIC.RESULT' | translate"
+            >
+              <div class="flex gap-4">
+                <div class="flex gap-2">
+                  <p class="font-semibold text-gray-500 dark:text-gray-400">
+                    {{ "PAGES.STORY_DINAMIC.GRADE" | translate }}:
+                  </p>
+                  <p class="font-bold text-orange-500">
+                    {{ result.grade }}
+                  </p>
+                </div>
+                <div class="flex gap-2">
+                  <p class="font-semibold text-gray-500 dark:text-gray-400">
+                    {{ "PAGES.STORY_DINAMIC.XP_EARNED" | translate }}:
+                  </p>
+                  <p class="font-bold text-orange-500">
+                    {{ result.xpEarned }}
+                  </p>
+                </div>
+              </div>
+            </app-card>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="w-full h-full flex justify-center align-middle items-center">
+    <app-skeleton />
+  </div>
+</ng-template>
