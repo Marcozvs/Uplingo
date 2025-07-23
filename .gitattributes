@@ -1,28 +1,27 @@
-*.ts linguist-detectable=true
-*.js linguist-detectable=true
-*.html linguist-detectable=true
-*.css linguist-detectable=true
-*.scss linguist-detectable=true
-*.sass linguist-detectable=true
-*.java linguist-detectable=true
+*.ts      linguist-detectable=true
+*.js      linguist-detectable=true
+*.html    linguist-detectable=true
+*.css     linguist-detectable=true
+*.scss    linguist-detectable=true
+*.sass    linguist-detectable=true
+*.java    linguist-detectable=true
 
-dist/** linguist-vendored
-build/** linguist-vendored
-node_modules/** linguist-vendored
-**/target/** linguist-vendored
-
-*.lock linguist-vendored
-*.json linguist-vendored
-*.md linguist-documentation
-*.yml linguist-documentation
-*.yaml linguist-documentation
-
-*.png linguist-vendored
-*.jpg linguist-vendored
-*.jpeg linguist-vendored
-*.gif linguist-vendored
-*.ico linguist-vendored
-*.svg linguist-vendored
-*.ttf linguist-vendored
-*.woff linguist-vendored
+dist/**
+build/**
+node_modules/**
+**/target/**
+*.lock
+*.json
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.ttf
+*.woff
 *.woff2 linguist-vendored
+
+*.md
+*.yml
+*.yaml linguist-documentation
