@@ -1,27 +1,40 @@
-*.ts      linguist-detectable=true
-*.js      linguist-detectable=true
-*.html    linguist-detectable=true
-*.css     linguist-detectable=true
-*.scss    linguist-detectable=true
-*.sass    linguist-detectable=true
-*.java    linguist-detectable=true
+*.ts linguist-detectable=true
+*.js linguist-detectable=true
+*.html linguist-detectable=true
+*.css linguist-detectable=true
+*.scss linguist-detectable=true
+*.sass linguist-detectable=true
+*.java linguist-detectable=true
+*.sql linguist-detectable=true
 
-dist/**
-build/**
-node_modules/**
-**/target/**
-*.lock
-*.json
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.ico
-*.svg
-*.ttf
-*.woff
-*.woff2 linguist-vendored
+authorization_server/target/** linguist-generated=true
+resource_server/target/** linguist-generated=true
+web_client_server/dist/** linguist-generated=true
+web_client_server/node_modules/** linguist-vendored=true
+web_client_server/.angular/** linguist-generated=true
+images/** linguist-documentation=true
 
-*.md
-*.yml
-*.yaml linguist-documentation
+**/target/** linguist-generated=true
+**/dist/** linguist-generated=true
+**/build/** linguist-generated=true
+**/node_modules/** linguist-vendored=true
+
+c4/*.puml linguist-documentation=true
+docker-compose.yml linguist-detectable=false
+init.sql linguist-detectable=true
+
+*.lock linguist-generated=true
+*.json linguist-detectable=false
+*.png linguist-detectable=false
+*.jpg linguist-detectable=false
+*.jpeg linguist-detectable=false
+*.gif linguist-detectable=false
+*.ico linguist-detectable=false
+*.svg linguist-detectable=false
+*.ttf linguist-detectable=false
+*.woff linguist-detectable=false
+*.woff2 linguist-detectable=false
+
+*.md linguist-documentation=false
+*.yml linguist-detectable=false
+*.yaml linguist-detectable=false
