@@ -39,7 +39,7 @@ services:
       - uplingo_network
   authorization:
     build:
-      context: ../../authorization_server
+      context: ./authorization_server
     container_name: authorization-server-${ENVIRONMENT}
     environment:
       - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
@@ -63,3 +63,13 @@ services:
       - cognitive
     networks:
       - uplingo_network
+networks:
+  uplingo_network:
+    name: uplingo_network_${NETWORK_ENVIRONMENT}
+volumes:
+  pgdata_dev:
+  pgadmin_data_dev:
+  pgdata_hom:
+  pgadmin_data_hom:
+  pgdata_prod:
+  pgadmin_data_prod:
