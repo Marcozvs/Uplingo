@@ -1,5 +1,9 @@
 *.ts linguist-detectable=true
 *.js linguist-detectable=true
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.scss linguist-detectable=false
+*.sass linguist-detectable=false
 *.java linguist-detectable=true
 *.sql linguist-detectable=true
 
