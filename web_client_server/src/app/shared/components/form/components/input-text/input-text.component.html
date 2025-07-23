@@ -1,0 +1,21 @@
+<input
+  [type]="props.type ?? 'text'"
+  [id]="id"
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [placeholder]="props.placeholder"
+  (input)="props['input']?.($event)"
+  (blur)="props['blur']?.($event)"
+  (keydown)="props['keydown']?.(field, $event)"
+  class="font-medium"
+  [ngClass]="[
+    formControl.value
+      ? 'border-orange-500 text-orange-500 focus:ring-orange-500 focus:border-orange-500'
+      : 'border-gray-300 text-gray-500 focus:ring-gray-300 focus:border-gray-300',
+    'bg-gray-50 text-sm rounded-lg block w-full p-2.5',
+    'dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400',
+    formControl.value
+      ? 'dark:text-orange-400 dark:focus:ring-orange-500 dark:focus:border-orange-500'
+      : 'dark:text-white dark:focus:ring-gray-300 dark:focus:border-gray-300'
+  ]"
+/>

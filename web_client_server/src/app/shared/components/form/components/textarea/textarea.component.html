@@ -1,0 +1,24 @@
+<div class="w-full">
+  <textarea
+    [id]="id"
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [rows]="props.rows || 4"
+    [placeholder]="props.placeholder"
+    [disabled]="props.disabled ?? false"
+    class="block p-2.5 w-full text-sm rounded-lg border focus:ring-orange-500 focus:border-orange-500 bg-gray-50 border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white transition-colors duration-300"
+    [ngClass]="
+      formControl.value
+        ? 'border-orange-500 text-orange-500 focus:ring-orange-500 focus:border-orange-500'
+        : 'border-gray-300 text-gray-900 focus:ring-orange-500 focus:border-orange-500'
+    "
+  ></textarea>
+
+  <div
+    class="mt-1 text-xs text-red-500"
+    role="alert"
+    *ngIf="showError && formControl.errors"
+  >
+    <formly-validation-message [field]="field"></formly-validation-message>
+  </div>
+</div>
